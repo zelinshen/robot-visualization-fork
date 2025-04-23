@@ -14,6 +14,16 @@
           "default_value": ""
         },
         {
+          "name": "names",
+          "type": {
+            "type_id": 161,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
           "name": "q",
           "type": {
             "type_id": 154,
@@ -121,7 +131,7 @@
   "type_hashes": [
     {
       "type_name": "controller_msgs/msg/JointState",
-      "hash_string": "RIHS01_dd60349e901ae818bf54a8e97c5a89093b2de4936cbd22c5eb3d081c4122497c"
+      "hash_string": "RIHS01_f7061564f59c7d966eaf28c3304a3fc05a132e20cc1aae207016f8919016375b"
     },
     {
       "type_name": "builtin_interfaces/msg/Time",

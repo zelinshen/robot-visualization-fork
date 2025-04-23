@@ -132,16 +132,32 @@ private:
   ::controller_msgs::msg::JointCmd msg_;
 };
 
+class Init_JointCmd_names
+{
+public:
+  explicit Init_JointCmd_names(::controller_msgs::msg::JointCmd & msg)
+  : msg_(msg)
+  {}
+  Init_JointCmd_q names(::controller_msgs::msg::JointCmd::_names_type arg)
+  {
+    msg_.names = std::move(arg);
+    return Init_JointCmd_q(msg_);
+  }
+
+private:
+  ::controller_msgs::msg::JointCmd msg_;
+};
+
 class Init_JointCmd_header
 {
 public:
   Init_JointCmd_header()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_JointCmd_q header(::controller_msgs::msg::JointCmd::_header_type arg)
+  Init_JointCmd_names header(::controller_msgs::msg::JointCmd::_header_type arg)
   {
     msg_.header = std::move(arg);
-    return Init_JointCmd_q(msg_);
+    return Init_JointCmd_names(msg_);
   }
 
 private:

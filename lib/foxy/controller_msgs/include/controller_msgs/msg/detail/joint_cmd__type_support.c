@@ -17,6 +17,8 @@
 #include "std_msgs/msg/header.h"
 // Member `header`
 #include "std_msgs/msg/detail/header__rosidl_typesupport_introspection_c.h"
+// Member `names`
+#include "rosidl_runtime_c/string_functions.h"
 // Member `q`
 // Member `v`
 // Member `tau`
@@ -44,7 +46,7 @@ void JointCmd__rosidl_typesupport_introspection_c__JointCmd_fini_function(void *
   controller_msgs__msg__JointCmd__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember JointCmd__rosidl_typesupport_introspection_c__JointCmd_message_member_array[8] = {
+static rosidl_typesupport_introspection_c__MessageMember JointCmd__rosidl_typesupport_introspection_c__JointCmd_message_member_array[9] = {
   {
     "header",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
@@ -54,6 +56,21 @@ static rosidl_typesupport_introspection_c__MessageMember JointCmd__rosidl_typesu
     0,  // array size
     false,  // is upper bound
     offsetof(controller_msgs__msg__JointCmd, header),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "names",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_STRING,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(controller_msgs__msg__JointCmd, names),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -170,7 +187,7 @@ static rosidl_typesupport_introspection_c__MessageMember JointCmd__rosidl_typesu
 static const rosidl_typesupport_introspection_c__MessageMembers JointCmd__rosidl_typesupport_introspection_c__JointCmd_message_members = {
   "controller_msgs__msg",  // message namespace
   "JointCmd",  // message name
-  8,  // number of fields
+  9,  // number of fields
   sizeof(controller_msgs__msg__JointCmd),
   JointCmd__rosidl_typesupport_introspection_c__JointCmd_message_member_array,  // message members
   JointCmd__rosidl_typesupport_introspection_c__JointCmd_init_function,  // function to initialize message memory (memory has to be allocated)

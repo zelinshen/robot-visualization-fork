@@ -11,10 +11,10 @@ controller_msgs__msg__JointCmd__get_type_hash(
 {
   (void)type_support;
   static rosidl_type_hash_t hash = {1, {
-      0xa6, 0xef, 0x97, 0x74, 0x19, 0x41, 0x4c, 0x40,
-      0xf7, 0x09, 0xae, 0x4a, 0x4b, 0x3a, 0x34, 0xa7,
-      0x8e, 0x51, 0xa2, 0xae, 0x0c, 0x5d, 0x4c, 0x3c,
-      0xb3, 0x7d, 0xad, 0x09, 0xd9, 0xab, 0x31, 0xb9,
+      0x50, 0x11, 0x4f, 0xe2, 0x52, 0xc0, 0x32, 0xa1,
+      0x7b, 0x35, 0xb7, 0xd3, 0x03, 0xb4, 0xd2, 0x93,
+      0x3e, 0x7d, 0x99, 0x6e, 0x82, 0xdd, 0xce, 0x60,
+      0x78, 0x74, 0x18, 0x64, 0x83, 0x2b, 0x84, 0x1a,
     }};
   return &hash;
 }
@@ -48,6 +48,7 @@ static char std_msgs__msg__Header__TYPE_NAME[] = "std_msgs/msg/Header";
 
 // Define type names, field names, and default values
 static char controller_msgs__msg__JointCmd__FIELD_NAME__header[] = "header";
+static char controller_msgs__msg__JointCmd__FIELD_NAME__names[] = "names";
 static char controller_msgs__msg__JointCmd__FIELD_NAME__q[] = "q";
 static char controller_msgs__msg__JointCmd__FIELD_NAME__v[] = "v";
 static char controller_msgs__msg__JointCmd__FIELD_NAME__tau[] = "tau";
@@ -64,6 +65,16 @@ static rosidl_runtime_c__type_description__Field controller_msgs__msg__JointCmd_
       0,
       0,
       {std_msgs__msg__Header__TYPE_NAME, 19, 19},
+    },
+    {NULL, 0, 0},
+  },
+  {
+    {controller_msgs__msg__JointCmd__FIELD_NAME__names, 5, 5},
+    {
+      rosidl_runtime_c__type_description__FieldType__FIELD_TYPE_STRING_UNBOUNDED_SEQUENCE,
+      0,
+      0,
+      {NULL, 0, 0},
     },
     {NULL, 0, 0},
   },
@@ -159,7 +170,7 @@ controller_msgs__msg__JointCmd__get_type_description(
   static const rosidl_runtime_c__type_description__TypeDescription description = {
     {
       {controller_msgs__msg__JointCmd__TYPE_NAME, 28, 28},
-      {controller_msgs__msg__JointCmd__FIELDS, 8, 8},
+      {controller_msgs__msg__JointCmd__FIELDS, 9, 9},
     },
     {controller_msgs__msg__JointCmd__REFERENCED_TYPE_DESCRIPTIONS, 2, 2},
   };
@@ -176,6 +187,7 @@ controller_msgs__msg__JointCmd__get_type_description(
 static char toplevel_type_raw_source[] =
   "std_msgs/Header header\n"
   "\n"
+  "string[]  names\n"
   "float32[] q\n"
   "float32[] v\n"
   "float32[] tau\n"
@@ -196,7 +208,7 @@ controller_msgs__msg__JointCmd__get_individual_type_description_source(
   static const rosidl_runtime_c__type_description__TypeSource source = {
     {controller_msgs__msg__JointCmd__TYPE_NAME, 28, 28},
     {msg_encoding, 3, 3},
-    {toplevel_type_raw_source, 110, 110},
+    {toplevel_type_raw_source, 127, 127},
   };
   return &source;
 }

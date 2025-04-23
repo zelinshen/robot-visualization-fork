@@ -14,6 +14,8 @@
 // Include directives for member types
 // Member `header`
 #include "std_msgs/msg/detail/header__functions.h"
+// Member `names`
+#include "rosidl_runtime_c/string_functions.h"
 // Member `q`
 // Member `v`
 // Member `tau`
@@ -30,6 +32,11 @@ controller_msgs__msg__JointCmd__init(controller_msgs__msg__JointCmd * msg)
   }
   // header
   if (!std_msgs__msg__Header__init(&msg->header)) {
+    controller_msgs__msg__JointCmd__fini(msg);
+    return false;
+  }
+  // names
+  if (!rosidl_runtime_c__String__Sequence__init(&msg->names, 0)) {
     controller_msgs__msg__JointCmd__fini(msg);
     return false;
   }
@@ -75,6 +82,8 @@ controller_msgs__msg__JointCmd__fini(controller_msgs__msg__JointCmd * msg)
   }
   // header
   std_msgs__msg__Header__fini(&msg->header);
+  // names
+  rosidl_runtime_c__String__Sequence__fini(&msg->names);
   // q
   rosidl_runtime_c__float__Sequence__fini(&msg->q);
   // v
@@ -99,6 +108,12 @@ controller_msgs__msg__JointCmd__are_equal(const controller_msgs__msg__JointCmd *
   // header
   if (!std_msgs__msg__Header__are_equal(
       &(lhs->header), &(rhs->header)))
+  {
+    return false;
+  }
+  // names
+  if (!rosidl_runtime_c__String__Sequence__are_equal(
+      &(lhs->names), &(rhs->names)))
   {
     return false;
   }
@@ -156,6 +171,12 @@ controller_msgs__msg__JointCmd__copy(
   // header
   if (!std_msgs__msg__Header__copy(
       &(input->header), &(output->header)))
+  {
+    return false;
+  }
+  // names
+  if (!rosidl_runtime_c__String__Sequence__copy(
+      &(input->names), &(output->names)))
   {
     return false;
   }

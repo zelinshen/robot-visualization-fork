@@ -7,5 +7,6 @@
 #include "controller_msgs/msg/detail/imu_data__struct.hpp"
 #include "controller_msgs/msg/detail/imu_data__builder.hpp"
 #include "controller_msgs/msg/detail/imu_data__traits.hpp"
+#include "controller_msgs/msg/detail/imu_data__type_support.hpp"
 
 #endif  // CONTROLLER_MSGS__MSG__IMU_DATA_HPP_

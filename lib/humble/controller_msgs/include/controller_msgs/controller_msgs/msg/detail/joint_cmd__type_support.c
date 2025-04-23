@@ -17,6 +17,8 @@
 #include "std_msgs/msg/header.h"
 // Member `header`
 #include "std_msgs/msg/detail/header__rosidl_typesupport_introspection_c.h"
+// Member `names`
+#include "rosidl_runtime_c/string_functions.h"
 // Member `q`
 // Member `v`
 // Member `tau`
@@ -42,6 +44,61 @@ void controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__JointCm
 void controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__JointCmd_fini_function(void * message_memory)
 {
   controller_msgs__msg__JointCmd__fini(message_memory);
+}
+
+size_t controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__size_function__JointCmd__names(
+  const void * untyped_member)
+{
+  const rosidl_runtime_c__String__Sequence * member =
+    (const rosidl_runtime_c__String__Sequence *)(untyped_member);
+  return member->size;
+}
+
+const void * controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__get_const_function__JointCmd__names(
+  const void * untyped_member, size_t index)
+{
+  const rosidl_runtime_c__String__Sequence * member =
+    (const rosidl_runtime_c__String__Sequence *)(untyped_member);
+  return &member->data[index];
+}
+
+void * controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__get_function__JointCmd__names(
+  void * untyped_member, size_t index)
+{
+  rosidl_runtime_c__String__Sequence * member =
+    (rosidl_runtime_c__String__Sequence *)(untyped_member);
+  return &member->data[index];
+}
+
+void controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__fetch_function__JointCmd__names(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const rosidl_runtime_c__String * item =
+    ((const rosidl_runtime_c__String *)
+    controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__get_const_function__JointCmd__names(untyped_member, index));
+  rosidl_runtime_c__String * value =
+    (rosidl_runtime_c__String *)(untyped_value);
+  *value = *item;
+}
+
+void controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__assign_function__JointCmd__names(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  rosidl_runtime_c__String * item =
+    ((rosidl_runtime_c__String *)
+    controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__get_function__JointCmd__names(untyped_member, index));
+  const rosidl_runtime_c__String * value =
+    (const rosidl_runtime_c__String *)(untyped_value);
+  *item = *value;
+}
+
+bool controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__resize_function__JointCmd__names(
+  void * untyped_member, size_t size)
+{
+  rosidl_runtime_c__String__Sequence * member =
+    (rosidl_runtime_c__String__Sequence *)(untyped_member);
+  rosidl_runtime_c__String__Sequence__fini(member);
+  return rosidl_runtime_c__String__Sequence__init(member, size);
 }
 
 size_t controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__size_function__JointCmd__q(
@@ -374,7 +431,7 @@ bool controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__resize_
   return rosidl_runtime_c__uint8__Sequence__init(member, size);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__JointCmd_message_member_array[8] = {
+static rosidl_typesupport_introspection_c__MessageMember controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__JointCmd_message_member_array[9] = {
   {
     "header",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
@@ -391,6 +448,23 @@ static rosidl_typesupport_introspection_c__MessageMember controller_msgs__msg__J
     NULL,  // fetch(index, &value) function pointer
     NULL,  // assign(index, value) function pointer
     NULL  // resize(index) function pointer
+  },
+  {
+    "names",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_STRING,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(controller_msgs__msg__JointCmd, names),  // bytes offset in struct
+    NULL,  // default value
+    controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__size_function__JointCmd__names,  // size() function pointer
+    controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__get_const_function__JointCmd__names,  // get_const(index) function pointer
+    controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__get_function__JointCmd__names,  // get(index) function pointer
+    controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__fetch_function__JointCmd__names,  // fetch(index, &value) function pointer
+    controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__assign_function__JointCmd__names,  // assign(index, value) function pointer
+    controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__resize_function__JointCmd__names  // resize(index) function pointer
   },
   {
     "q",  // name
@@ -516,7 +590,7 @@ static rosidl_typesupport_introspection_c__MessageMember controller_msgs__msg__J
 static const rosidl_typesupport_introspection_c__MessageMembers controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__JointCmd_message_members = {
   "controller_msgs__msg",  // message namespace
   "JointCmd",  // message name
-  8,  // number of fields
+  9,  // number of fields
   sizeof(controller_msgs__msg__JointCmd),
   controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__JointCmd_message_member_array,  // message members
   controller_msgs__msg__JointCmd__rosidl_typesupport_introspection_c__JointCmd_init_function,  // function to initialize message memory (memory has to be allocated)

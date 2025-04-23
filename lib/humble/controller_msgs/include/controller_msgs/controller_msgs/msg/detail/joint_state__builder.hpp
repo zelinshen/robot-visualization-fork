@@ -101,16 +101,32 @@ private:
   ::controller_msgs::msg::JointState msg_;
 };
 
+class Init_JointState_names
+{
+public:
+  explicit Init_JointState_names(::controller_msgs::msg::JointState & msg)
+  : msg_(msg)
+  {}
+  Init_JointState_q names(::controller_msgs::msg::JointState::_names_type arg)
+  {
+    msg_.names = std::move(arg);
+    return Init_JointState_q(msg_);
+  }
+
+private:
+  ::controller_msgs::msg::JointState msg_;
+};
+
 class Init_JointState_header
 {
 public:
   Init_JointState_header()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_JointState_q header(::controller_msgs::msg::JointState::_header_type arg)
+  Init_JointState_names header(::controller_msgs::msg::JointState::_header_type arg)
   {
     msg_.header = std::move(arg);
-    return Init_JointState_q(msg_);
+    return Init_JointState_names(msg_);
   }
 
 private:

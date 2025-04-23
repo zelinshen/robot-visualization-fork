@@ -7,5 +7,6 @@
 #include "controller_msgs/msg/detail/joint_state__struct.hpp"
 #include "controller_msgs/msg/detail/joint_state__builder.hpp"
 #include "controller_msgs/msg/detail/joint_state__traits.hpp"
+#include "controller_msgs/msg/detail/joint_state__type_support.hpp"
 
 #endif  // CONTROLLER_MSGS__MSG__JOINT_STATE_HPP_

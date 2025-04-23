@@ -14,6 +14,16 @@
           "default_value": ""
         },
         {
+          "name": "names",
+          "type": {
+            "type_id": 161,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
           "name": "q",
           "type": {
             "type_id": 154,
@@ -141,7 +151,7 @@
   "type_hashes": [
     {
       "type_name": "controller_msgs/msg/JointCmd",
-      "hash_string": "RIHS01_a6ef977419414c40f709ae4a4b3a34a78e51a2ae0c5d4c3cb37dad09d9ab31b9"
+      "hash_string": "RIHS01_50114fe252c032a17b35b7d303b4d2933e7d996e82ddce6078741864832b841a"
     },
     {
       "type_name": "builtin_interfaces/msg/Time",

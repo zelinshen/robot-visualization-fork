@@ -7,5 +7,6 @@
 #include "controller_msgs/msg/detail/joint_cmd__struct.hpp"
 #include "controller_msgs/msg/detail/joint_cmd__builder.hpp"
 #include "controller_msgs/msg/detail/joint_cmd__traits.hpp"
+#include "controller_msgs/msg/detail/joint_cmd__type_support.hpp"
 
 #endif  // CONTROLLER_MSGS__MSG__JOINT_CMD_HPP_

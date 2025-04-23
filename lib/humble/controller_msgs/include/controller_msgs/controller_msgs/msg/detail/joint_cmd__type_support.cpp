@@ -37,6 +37,51 @@ void JointCmd_fini_function(void * message_memory)
   typed_message->~JointCmd();
 }
 
+size_t size_function__JointCmd__names(const void * untyped_member)
+{
+  const auto * member = reinterpret_cast<const std::vector<std::string> *>(untyped_member);
+  return member->size();
+}
+
+const void * get_const_function__JointCmd__names(const void * untyped_member, size_t index)
+{
+  const auto & member =
+    *reinterpret_cast<const std::vector<std::string> *>(untyped_member);
+  return &member[index];
+}
+
+void * get_function__JointCmd__names(void * untyped_member, size_t index)
+{
+  auto & member =
+    *reinterpret_cast<std::vector<std::string> *>(untyped_member);
+  return &member[index];
+}
+
+void fetch_function__JointCmd__names(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const auto & item = *reinterpret_cast<const std::string *>(
+    get_const_function__JointCmd__names(untyped_member, index));
+  auto & value = *reinterpret_cast<std::string *>(untyped_value);
+  value = item;
+}
+
+void assign_function__JointCmd__names(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  auto & item = *reinterpret_cast<std::string *>(
+    get_function__JointCmd__names(untyped_member, index));
+  const auto & value = *reinterpret_cast<const std::string *>(untyped_value);
+  item = value;
+}
+
+void resize_function__JointCmd__names(void * untyped_member, size_t size)
+{
+  auto * member =
+    reinterpret_cast<std::vector<std::string> *>(untyped_member);
+  member->resize(size);
+}
+
 size_t size_function__JointCmd__q(const void * untyped_member)
 {
   const auto * member = reinterpret_cast<const std::vector<float> *>(untyped_member);
@@ -307,7 +352,7 @@ void resize_function__JointCmd__mode(void * untyped_member, size_t size)
   member->resize(size);
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember JointCmd_message_member_array[8] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember JointCmd_message_member_array[9] = {
   {
     "header",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
@@ -324,6 +369,23 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember JointCmd_mess
     nullptr,  // fetch(index, &value) function pointer
     nullptr,  // assign(index, value) function pointer
     nullptr  // resize(index) function pointer
+  },
+  {
+    "names",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_STRING,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    true,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(controller_msgs::msg::JointCmd, names),  // bytes offset in struct
+    nullptr,  // default value
+    size_function__JointCmd__names,  // size() function pointer
+    get_const_function__JointCmd__names,  // get_const(index) function pointer
+    get_function__JointCmd__names,  // get(index) function pointer
+    fetch_function__JointCmd__names,  // fetch(index, &value) function pointer
+    assign_function__JointCmd__names,  // assign(index, value) function pointer
+    resize_function__JointCmd__names  // resize(index) function pointer
   },
   {
     "q",  // name
@@ -449,7 +511,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember JointCmd_mess
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers JointCmd_message_members = {
   "controller_msgs::msg",  // message namespace
   "JointCmd",  // message name
-  8,  // number of fields
+  9,  // number of fields
   sizeof(controller_msgs::msg::JointCmd),
   JointCmd_message_member_array,  // message members
   JointCmd_init_function,  // function to initialize message memory (memory has to be allocated)

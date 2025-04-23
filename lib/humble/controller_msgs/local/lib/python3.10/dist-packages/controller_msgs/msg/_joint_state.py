@@ -68,6 +68,7 @@ class JointState(metaclass=Metaclass_JointState):
 
     __slots__ = [
         '_header',
+        '_names',
         '_q',
         '_v',
         '_vd',
@@ -77,6 +78,7 @@ class JointState(metaclass=Metaclass_JointState):
 
     _fields_and_field_types = {
         'header': 'std_msgs/Header',
+        'names': 'sequence<string>',
         'q': 'sequence<float>',
         'v': 'sequence<float>',
         'vd': 'sequence<float>',
@@ -86,6 +88,7 @@ class JointState(metaclass=Metaclass_JointState):
 
     SLOT_TYPES = (
         rosidl_parser.definition.NamespacedType(['std_msgs', 'msg'], 'Header'),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.UnboundedString()),  # noqa: E501
         rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('float')),  # noqa: E501
         rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('float')),  # noqa: E501
         rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('float')),  # noqa: E501
@@ -99,6 +102,7 @@ class JointState(metaclass=Metaclass_JointState):
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         from std_msgs.msg import Header
         self.header = kwargs.get('header', Header())
+        self.names = kwargs.get('names', [])
         self.q = array.array('f', kwargs.get('q', []))
         self.v = array.array('f', kwargs.get('v', []))
         self.vd = array.array('f', kwargs.get('vd', []))
@@ -136,6 +140,8 @@ class JointState(metaclass=Metaclass_JointState):
             return False
         if self.header != other.header:
             return False
+        if self.names != other.names:
+            return False
         if self.q != other.q:
             return False
         if self.v != other.v:
@@ -166,6 +172,29 @@ class JointState(metaclass=Metaclass_JointState):
                 isinstance(value, Header), \
                 "The 'header' field must be a sub message of type 'Header'"
         self._header = value
+
+    @builtins.property
+    def names(self):
+        """Message field 'names'."""
+        return self._names
+
+    @names.setter
+    def names(self, value):
+        if __debug__:
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
+            assert \
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, str) for v in value) and
+                 True), \
+                "The 'names' field must be a set or sequence and each value of type 'str'"
+        self._names = value
 
     @builtins.property
     def q(self):

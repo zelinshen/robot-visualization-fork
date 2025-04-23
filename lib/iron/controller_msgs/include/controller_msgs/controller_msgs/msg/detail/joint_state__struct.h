@@ -19,6 +19,8 @@ extern "C"
 // Include directives for member types
 // Member 'header'
 #include "std_msgs/msg/detail/header__struct.h"
+// Member 'names'
+#include "rosidl_runtime_c/string.h"
 // Member 'q'
 // Member 'v'
 // Member 'vd'
@@ -29,6 +31,7 @@ extern "C"
 typedef struct controller_msgs__msg__JointState
 {
   std_msgs__msg__Header header;
+  rosidl_runtime_c__String__Sequence names;
   rosidl_runtime_c__float__Sequence q;
   rosidl_runtime_c__float__Sequence v;
   rosidl_runtime_c__float__Sequence vd;

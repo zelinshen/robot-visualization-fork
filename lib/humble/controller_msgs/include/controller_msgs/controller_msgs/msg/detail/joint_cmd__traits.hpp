@@ -36,6 +36,24 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
+  // member: names
+  {
+    if (msg.names.size() == 0) {
+      out << "names: []";
+    } else {
+      out << "names: [";
+      size_t pending_items = msg.names.size();
+      for (auto item : msg.names) {
+        rosidl_generator_traits::value_to_yaml(item, out);
+        if (--pending_items > 0) {
+          out << ", ";
+        }
+      }
+      out << "]";
+    }
+    out << ", ";
+  }
+
   // member: q
   {
     if (msg.q.size() == 0) {
@@ -163,6 +181,26 @@ inline void to_block_style_yaml(
     }
     out << "header:\n";
     to_block_style_yaml(msg.header, out, indentation + 2);
+  }
+
+  // member: names
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    if (msg.names.size() == 0) {
+      out << "names: []\n";
+    } else {
+      out << "names:\n";
+      for (auto item : msg.names) {
+        if (indentation > 0) {
+          out << std::string(indentation, ' ');
+        }
+        out << "- ";
+        rosidl_generator_traits::value_to_yaml(item, out);
+        out << "\n";
+      }
+    }
   }
 
   // member: q

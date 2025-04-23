@@ -61,6 +61,9 @@ struct JointState_
   using _header_type =
     std_msgs::msg::Header_<ContainerAllocator>;
   _header_type header;
+  using _names_type =
+    std::vector<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>>;
+  _names_type names;
   using _q_type =
     std::vector<float, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<float>>;
   _q_type q;
@@ -82,6 +85,12 @@ struct JointState_
     const std_msgs::msg::Header_<ContainerAllocator> & _arg)
   {
     this->header = _arg;
+    return *this;
+  }
+  Type & set__names(
+    const std::vector<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>> & _arg)
+  {
+    this->names = _arg;
     return *this;
   }
   Type & set__q(
@@ -158,6 +167,9 @@ struct JointState_
   bool operator==(const JointState_ & other) const
   {
     if (this->header != other.header) {
+      return false;
+    }
+    if (this->names != other.names) {
       return false;
     }
     if (this->q != other.q) {

@@ -11,10 +11,10 @@ controller_msgs__msg__JointState__get_type_hash(
 {
   (void)type_support;
   static rosidl_type_hash_t hash = {1, {
-      0xdd, 0x60, 0x34, 0x9e, 0x90, 0x1a, 0xe8, 0x18,
-      0xbf, 0x54, 0xa8, 0xe9, 0x7c, 0x5a, 0x89, 0x09,
-      0x3b, 0x2d, 0xe4, 0x93, 0x6c, 0xbd, 0x22, 0xc5,
-      0xeb, 0x3d, 0x08, 0x1c, 0x41, 0x22, 0x49, 0x7c,
+      0xf7, 0x06, 0x15, 0x64, 0xf5, 0x9c, 0x7d, 0x96,
+      0x6e, 0xaf, 0x28, 0xc3, 0x30, 0x4a, 0x3f, 0xc0,
+      0x5a, 0x13, 0x2e, 0x20, 0xcc, 0x1a, 0xae, 0x20,
+      0x70, 0x16, 0xf8, 0x91, 0x90, 0x16, 0x37, 0x5b,
     }};
   return &hash;
 }
@@ -48,6 +48,7 @@ static char std_msgs__msg__Header__TYPE_NAME[] = "std_msgs/msg/Header";
 
 // Define type names, field names, and default values
 static char controller_msgs__msg__JointState__FIELD_NAME__header[] = "header";
+static char controller_msgs__msg__JointState__FIELD_NAME__names[] = "names";
 static char controller_msgs__msg__JointState__FIELD_NAME__q[] = "q";
 static char controller_msgs__msg__JointState__FIELD_NAME__v[] = "v";
 static char controller_msgs__msg__JointState__FIELD_NAME__vd[] = "vd";
@@ -62,6 +63,16 @@ static rosidl_runtime_c__type_description__Field controller_msgs__msg__JointStat
       0,
       0,
       {std_msgs__msg__Header__TYPE_NAME, 19, 19},
+    },
+    {NULL, 0, 0},
+  },
+  {
+    {controller_msgs__msg__JointState__FIELD_NAME__names, 5, 5},
+    {
+      rosidl_runtime_c__type_description__FieldType__FIELD_TYPE_STRING_UNBOUNDED_SEQUENCE,
+      0,
+      0,
+      {NULL, 0, 0},
     },
     {NULL, 0, 0},
   },
@@ -137,7 +148,7 @@ controller_msgs__msg__JointState__get_type_description(
   static const rosidl_runtime_c__type_description__TypeDescription description = {
     {
       {controller_msgs__msg__JointState__TYPE_NAME, 30, 30},
-      {controller_msgs__msg__JointState__FIELDS, 6, 6},
+      {controller_msgs__msg__JointState__FIELDS, 7, 7},
     },
     {controller_msgs__msg__JointState__REFERENCED_TYPE_DESCRIPTIONS, 2, 2},
   };
@@ -154,6 +165,7 @@ controller_msgs__msg__JointState__get_type_description(
 static char toplevel_type_raw_source[] =
   "std_msgs/Header header\n"
   "\n"
+  "string[]  names\n"
   "float32[] q\n"
   "float32[] v\n"
   "float32[] vd\n"
@@ -172,7 +184,7 @@ controller_msgs__msg__JointState__get_individual_type_description_source(
   static const rosidl_runtime_c__type_description__TypeSource source = {
     {controller_msgs__msg__JointState__TYPE_NAME, 30, 30},
     {msg_encoding, 3, 3},
-    {toplevel_type_raw_source, 84, 84},
+    {toplevel_type_raw_source, 101, 101},
   };
   return &source;
 }

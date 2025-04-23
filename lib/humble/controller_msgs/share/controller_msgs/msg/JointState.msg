@@ -1,5 +1,6 @@
 std_msgs/Header header
 
+string[]  names
 float32[] q
 float32[] v
 float32[] vd

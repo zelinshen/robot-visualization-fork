@@ -9,6 +9,8 @@ module controller_msgs {
     struct JointState {
       std_msgs::msg::Header header;
 
+      sequence<string> names;
+
       sequence<float> q;
 
       sequence<float> v;
